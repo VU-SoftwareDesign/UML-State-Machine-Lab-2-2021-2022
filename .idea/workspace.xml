@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="36e5186c-79c8-4162-9ba2-fe13627a3a8b" name="Default Changelist" comment="Latest code. Covers encapsulation, and escaping references" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="25XrtKMmdaQBaBLkCUktL5j4zbK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/softwaredesign" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="softwaredesign.projectManager" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.test.testTask">
+    <configuration name="softwaredesign.projectManager in UML-State-Machine-Lab-2-2021-2022" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UML-State-Machine-Lab-2-2021-2022" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="softwaredesign.projectManager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="softwaredesign.projectManager" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UML-State-Machine-Lab-2-2021-2022" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="softwaredesign.projectManager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="softwaredesign.projectManager" />
+      <option name="MAIN_CLASS_NAME" value="softwaredesign.projectManager.test" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test.testTask" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UML-State-Machine-Lab-2-2021-2022" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="softwaredesign.projectManager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="softwaredesign.projectManager" />
+      <option name="MAIN_CLASS_NAME" value="softwaredesign.projectManager.test" />
+      <option name="METHOD_NAME" value="testTask" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.test.testEmployee" />
+      <item itemvalue="JUnit.softwaredesign.projectManager in UML-State-Machine-Lab-2-2021-2022" />
+      <item itemvalue="TestNG.test" />
+      <item itemvalue="TestNG.test.testTask" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.test.testTask" />
+        <item itemvalue="TestNG.test" />
+        <item itemvalue="JUnit.softwaredesign.projectManager in UML-State-Machine-Lab-2-2021-2022" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="36e5186c-79c8-4162-9ba2-fe13627a3a8b" name="Default Changelist" comment="" />
+      <created>1645684486387</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1645684486387</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Latest code. Covers encapsulation, and escaping references">
+      <created>1645865982564</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1645865982564</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Latest code. Covers encapsulation, and escaping references">
+      <created>1645866092382</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1645866092382</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Latest code. Covers encapsulation, and escaping references" />
+    <option name="LAST_COMMIT_MESSAGE" value="Latest code. Covers encapsulation, and escaping references" />
+  </component>
+</project>
