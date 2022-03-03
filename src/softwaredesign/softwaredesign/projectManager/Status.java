@@ -48,7 +48,7 @@ public class Status {
         this.currentStatus = currentStatus;
 //        System.out.println(currentStatus.toString());
     }
-    public Status (softwaredesign.projectManager.Status status) {
+    public Status (Status status) {
         this.currentStatus = status.currentStatus;
     }
 

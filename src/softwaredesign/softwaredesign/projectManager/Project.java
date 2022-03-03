@@ -1,6 +1,8 @@
 package softwaredesign.projectManager;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
+import java.util.UUID;
 
 public class Project {
     //Use "this" for creating new instance of class in the parameters
@@ -14,13 +16,13 @@ public class Project {
     private List<TaskList> taskLists;
     private List<Employee> allEmployees;
 
-    public Project(String name, List<TaskList> taskLists, List<Employee> employees, double availableFunds) {
+    public Project(String name, List<TaskList> taskLists, double availableFunds) {
+        updateEmployees();
+        updateTimeSpent();
         this.name = name;
         this.taskLists = taskLists;
-        this.allEmployees = employees;
         this.uuid = UUID.randomUUID();
         this.status = decideStatus();
-        this.timeSpent = updateTimeSpent();
         this.availableFunds = availableFunds;
     }
 
@@ -30,11 +32,10 @@ public class Project {
         this.allEmployees = employees;
         this.uuid = UUID.randomUUID();
         this.status = status;
-        this.timeSpent = updateTimeSpent();
         this.availableFunds = availableFunds;
     }
 
-    public Project (softwaredesign.projectManager.Project project) {
+    public Project (Project project) {
         this.name = project.name;
         this.taskLists = project.taskLists;
         this.allEmployees = project.allEmployees;
@@ -42,6 +43,18 @@ public class Project {
         this.status = project.status;
         this.timeSpent = project.timeSpent;
         this.availableFunds = project.availableFunds;
+    }
+
+    public void setAvailableFunds(double availableFunds) {
+        this.availableFunds = new Double(availableFunds);
+    }
+
+    public void addFunds (double moreFunds) {
+        this.availableFunds += moreFunds;
+    }
+
+    public double getAvailableFunds() {
+        return new Double(availableFunds);
     }
 
     public String getName() {
@@ -53,17 +66,6 @@ public class Project {
     }
 
     public Status getStatus() {return new Status(this.status);}
-
-    private double updateTimeSpent() {
-        double newTime = 0d;
-        for (TaskList currentTaskList : taskLists){
-            for (Task task : currentTaskList.getTaskList()) {
-                newTime += task.getTimeSpent();
-            }
-        }
-        return newTime;
-    }
-
 
     public void setStatus(Status status) {
         if (status.getProgress() != decideStatus().getProgress()) {
@@ -83,21 +85,32 @@ public class Project {
         taskLists.add(taskList);
     }
 
-    public void addWorker(Employee employee) {
+    private void addEmployee(Employee employee) {
         for(Employee currentEmployee: this.allEmployees) {
             if (currentEmployee.is(employee.getUuid())) {
-                System.err.println("Employee already ");
+                System.err.println("Employee already assigned.");
+                return;
             }
         }
+        allEmployees.add(new Employee(employee));
+    }
+
+    private void addTime (Double timeSpent) {
+        this.timeSpent += timeSpent;
     }
 
     public void updateEmployees () {
         this.taskLists.forEach(x-> x.getTaskList().forEach(y-> addEmployees(y.getAssignedEmployees())));
     }
+
+    public void updateTimeSpent() {
+        this.taskLists.forEach(x->x.getTaskList().forEach(y->addTime(y.getTimeSpent())));
+    }
+
     private void addEmployees (List<Employee> employees) {
         if (!this.allEmployees.containsAll(employees)) {
             for (Employee currentEmployee : employees) {
-                if (!this.allEmployees.contains(currentEmployee)) this.allEmployees.add(currentEmployee);
+                addEmployee(currentEmployee);
             }
         }
     }

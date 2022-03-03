@@ -8,7 +8,7 @@ final public class Skill {
         this.name = name;
     }
 
-    public Skill (softwaredesign.projectManager.Skill skill) {
+    public Skill (Skill skill) {
         this.name = skill.getName();
     }
 

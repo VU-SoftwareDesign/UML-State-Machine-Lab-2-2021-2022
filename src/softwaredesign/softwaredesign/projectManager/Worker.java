@@ -2,8 +2,8 @@ package softwaredesign.projectManager;
 
 import java.util.List;
 
-public class Worker extends Employee {
-    softwaredesign.projectManager.Worker smth = new softwaredesign.projectManager.Worker("lala");
+public class Worker extends Employee{
+    Worker smth = new Worker ("lala");
     public Worker(String name) {
         super(name);
     }

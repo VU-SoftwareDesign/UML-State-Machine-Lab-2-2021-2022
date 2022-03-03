@@ -1,7 +1,9 @@
 package softwaredesign.projectManager;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.UUID;
-import java.util.ArrayList; // import the ArrayList class
 
 public class Employee {
 
@@ -31,7 +33,7 @@ public class Employee {
         this.name = String.copyValueOf(newName.toCharArray());
     }
 
-    public Employee(softwaredesign.projectManager.Employee employee) {
+    public Employee(Employee employee) {
         this.name = employee.getName();
         this.workedHours = employee.getHours();
         this.skills = employee.getSkills();
@@ -72,17 +74,15 @@ public class Employee {
         this.skills.add(skill);
     }
 
-    public boolean is (UUID uuid) {
-        return this.uuid == uuid;
+    public double getWorkedHours() {
+        return new Double(this.workedHours);
     }
 
-    public void print () {
-        String messageToBePrinted = "Employee name:" + this.name + "\nHours worked: " + this.workedHours + "\nSkills: ";
-        System.out.print(messageToBePrinted);
+    public void setWorkedHours (Double workedHours) {
+        this.workedHours = new Double(workedHours);
+    }
 
-        for (Skill currentSkill : this.skills) {
-            System.out.print(currentSkill.getName() + " ");
-        }
-        System.out.println("\n");
+    public boolean is (UUID uuid) {
+        return this.uuid == uuid;
     }
 }

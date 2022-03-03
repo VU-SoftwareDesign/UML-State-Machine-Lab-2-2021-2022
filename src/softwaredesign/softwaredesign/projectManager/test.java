@@ -1,9 +1,11 @@
 package softwaredesign.projectManager;
-import org.testng.annotations.Test;
 
-import java.util.*;
+import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class test {
     //Think where to fit for polymorphis
@@ -12,6 +14,7 @@ public class test {
     String[] skillsTestSet = {"Blockchain, Cloud computing, Analytical Reasoning"};
     String[] employeeNames = {"Bobby", "Sammy", "Pink man"};
     String[] tasks = {"Wash car", "Cook food", "Eat", "Sleep", "Build a rocket", "Get a million dollars", "Do a moon dance"};
+    Printer printer = new Printer();
 
     //Use string array to create and add skills to an arrayList.
     public List<Skill> createSkillList (String[] skillNames) {
@@ -51,61 +54,65 @@ public class test {
     List<Skill> testSkillSet = new ArrayList<>(createSkillList(skillsTestSet));
 
 
-   @Test
-   public void printAllEmployees() {
-       System.out.println("\nPrinting all employees\n");
-       for (Employee currentEmployee : employees.keySet()) {
-           currentEmployee.print();
-       }
-   }
+    @Test
+    public void printAllEmployees() {
+        System.out.println("\nPrinting all employees\n");
+        for (Employee currentEmployee : employees.keySet()) {
+            printer.printEmployeeDetails(currentEmployee);
+        }
+    }
 
-   @Test
-   public void testEmployee() {
-       System.out.println("\nTesting Employees class.\n");
-       Employee testSubject = employeeList.get(0);
-       System.out.println("Current details of test subject:");
-       testSubject.print();
-       System.out.println("Changing " + testSubject.getName() + " name....");
-       testSubject.setName("Shelby");
-       System.out.println("Changing " + testSubject.getName() + " skills....");
-       testSubject.setSkills(testSkillSet);
-       System.out.println("Changing " + testSubject.getName() + " worked hours....");
-       testSubject.setHours(20d);
-       System.out.println("\n Details of test subject after changes: \n");
-       testSubject.print();
-   }
+    @Test
+    public void testEmployee() {
+        System.out.println("\nTesting Employees class.\n");
+        Employee testSubject = employeeList.get(0);
+        System.out.println("Current details of test subject:");
+        printer.printEmployeeDetails(testSubject);
+        System.out.println("Changing " + testSubject.getName() + " name....");
+        testSubject.setName("Shelby");
+        System.out.println("Changing " + testSubject.getName() + " skills....");
+        testSubject.setSkills(testSkillSet);
+        System.out.println("Changing " + testSubject.getName() + " worked hours....");
+        testSubject.setHours(20d);
+        System.out.println("\n Details of test subject after changes: \n");
+        printer.printEmployeeDetails(testSubject);
+    }
 
-   public void testAllEmployeeReferences (List<Employee> employeeList, List<Employee> employeeList0) {
-       for (int i = 0; i < employeeList.size(); i++) {
-           if (employeeList.get(i) == employeeList0.get(i)) {
-               System.err.println(employeeList.get(i).getName() + "reference is the same. Check for escaping references for employees");
-           }
-       }
-       System.err.println("No escaping references found");
-   }
+    public void testAllEmployeeReferences (List<Employee> employeeList, List<Employee> employeeList0) {
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (employeeList.get(i) == employeeList0.get(i)) {
+                System.err.println(employeeList.get(i).getName() + "reference is the same. Check for escaping references for employees");
+            }
+        }
+        System.err.println("No escaping references found");
+    }
 
-   @Test
-   public void testTask() {
-       System.out.println("\nTesting Task class\n");
-       Task testSubject = tasksList.get(0);
-       System.out.println("Changing status....");
-       testSubject.setStatus(Status.Progress.FINISHED);
-       System.out.println("Adding employee....");
-       testSubject.assignEmployeeToTask(employeeList.get(0));
-       List<Employee> employeeCopy = testSubject.getAssignedEmployees();
-       testSubject.setAssignedEmployees(employees);
+    @Test
+    public void testTask() {
+        System.out.println("\nTesting Task class\n");
+        Task testSubject = tasksList.get(0);
+        System.out.println("Changing status....");
+        testSubject.setStatus(Status.Progress.FINISHED);
+        System.out.println("Adding employee....");
+        testSubject.assignEmployeeToTask(employeeList.get(0));
 
-       System.out.println("\nTesting(shallow) wether any employee has the same reference after using setAssignedEmployees.");
-       List<Employee> employeeCopy2 = testSubject.getAssignedEmployees();
-       testAllEmployeeReferences(employeeCopy, employeeCopy2);
+        List<Employee> employeeCopy = testSubject.getAssignedEmployees();
+        testSubject.setAssignedEmployees(employees);
 
-   }
+        System.out.println("\nTesting(shallow) wether any employee has the same reference after using setAssignedEmployees.");
+        List<Employee> employeeCopy2 = testSubject.getAssignedEmployees();
+        testAllEmployeeReferences(employeeCopy, employeeCopy2);
 
-   @Test
+        if (employeeCopy.get(0).getName() == employeeCopy2.get(0).getName()) {
+            System.out.println("Same");
+        }
+    }
+
+    @Test
     public void printList () {
-       for (Skill currentSkill: skills){
-           System.out.println(currentSkill.getName());
-       }
-   }
+        for (Skill currentSkill: skills){
+            System.out.println(currentSkill.getName());
+        }
+    }
 
 }

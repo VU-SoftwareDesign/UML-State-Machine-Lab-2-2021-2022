@@ -25,7 +25,7 @@ public class TaskList {
         this.tasks = new HashMap<>();
     }
 
-    public TaskList(softwaredesign.projectManager.TaskList taskList) {
+    public TaskList(TaskList taskList) {
         this.name = taskList.name;
         this.uuid = taskList.uuid;
         this.tasks = taskList.tasks;
